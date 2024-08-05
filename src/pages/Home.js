@@ -3,6 +3,7 @@ import Header from '../components/Header';
 import HeroSection from '../components/HeroSection';
 import CourseCard from '../components/CourseCard';
 import Footer from '../components/Footer';
+import '../styles/global.css';
 
 const Home = () => {
   const courses = [
@@ -10,6 +11,7 @@ const Home = () => {
     { title: 'Pre-Course', description: 'Make your grade the best from the beginning' },
     { title: 'Remedial', description: 'Become a successful student' },
   ];
+
 
   return (
     <>
