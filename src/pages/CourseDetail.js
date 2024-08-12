@@ -1,7 +1,7 @@
 // src/pages/CourseDetail.js
 import React from 'react';
 import CourseLearn from '../components/courses/courseDetails/CourseLearn';
-import CourseContent from '../components/courses/courseDetails/CourseContent';
+import CourseContent from '../components/courses/courseDetails/MainCourseContent';
 import CourseReviews from '../components/courses/courseDetails/CourseReviews';
 import CourseInstructors from '../components/courses/courseDetails/CourseInstructors';
 import CourseTabs from '../components/courses/courseDetails/CourseTabs';
@@ -12,17 +12,17 @@ function CourseDetail() {
     return (
         <div className="container mx-auto py-10 px-4">
             <div className="flex flex-col md:flex-row md:space-x-10">
-                <div className="md:w-2/3">
-                <div className="relative w-full pb-[70%]">
-                    <iframe 
-                        src="https://www.youtube.com/watch?v=EerdGm-ehJQ" 
-                        title="Course Preview" 
-                        allowFullScreen
-                        className="absolute top-0 left-0 w-full h-full rounded-lg">
-                    </iframe>
-                </div>
-                </div>
                 <div className="md:w-1/3">
+                    <div className="relative w-full h-full ">
+                        <iframe 
+                            src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                            title="Course Preview" 
+                            allowFullScreen
+                            className="absolute top-0 left-0 w-full h-full rounded-lg">
+                        </iframe>
+                    </div>
+                </div>
+                <div className="md:w-2/3">
                     <h1 className="text-4xl font-bold mb-4">Build a Quiz App with HTML, CSS, and JavaScript</h1>
                     <p className="text-xl text-gray-700 mb-6">
                         Improve your core development skills by building a Quiz App with HTML, CSS, and JavaScript.

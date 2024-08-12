@@ -6,7 +6,7 @@ function CourseInstructors() {
         <section>
             <h2 className="text-xl font-bold mb-4">Instructors</h2>
             <div>
-                <p>James Quick</p>
+                <p>Meba</p>
                 <p className="text-sm text-gray-600">Web Developer and Teacher</p>
             </div>
         </section>
