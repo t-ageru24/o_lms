@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function CourseReview() {
+function CourseReviews() {
   const [reviews, setReviews] = useState([
     { name: 'Esmael M.', rating: 5, comment: 'Great course! Highly recommend.' },
     { name: 'Meba ', rating: 4, comment: 'Very informative and well structured.' },
@@ -83,4 +83,28 @@ function CourseReview() {
   );
 }
 
-export default CourseReview;
+export default CourseReviews;
+
+
+// // src/components/courses/CourseReviews.js
+// import React from 'react';
+
+// function CourseReviews() {
+//     return (
+//         <section>
+//             <h2 className="text-xl font-bold mb-4">Reviews</h2>
+//             <div className="space-y-4">
+//                 <div className="border p-4 rounded-lg">
+//                     <p>"This course was amazing! I learned so much."</p>
+//                     <p className="text-sm text-gray-600">- John Doe</p>
+//                 </div>
+//                 <div className="border p-4 rounded-lg">
+//                     <p>"A great introduction to web development."</p>
+//                     <p className="text-sm text-gray-600">- Jane Smith</p>
+//                 </div>
+//             </div>
+//         </section>
+//     );
+// }
+
+// export default CourseReviews;
