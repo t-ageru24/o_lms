@@ -42,16 +42,21 @@ function CourseCardList() {
   ];
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-      {courses.map((course) => (
-        <CourseCard
-          key={course.id}
-          title={course.title}
-          description={course.description}
-          imageUrl={course.imageUrl}
-          courseId={course.id}
-        />
-      ))}
+    <div className="bg-gray-50 min-h-screen py-20">
+      <div className="container mx-auto px-4">
+        <h2 className="text-3xl font-bold mb-8">All Courses</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          {courses.map((course) => (
+            <CourseCard
+              key={course.id}
+              title={course.title}
+              description={course.description}
+              imageUrl={course.imageUrl}
+              courseId={course.id}
+            />
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

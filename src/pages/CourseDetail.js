@@ -1,5 +1,5 @@
-// src/pages/CourseDetail.js
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import CourseLearn from '../components/courses/courseDetails/CourseLearn';
 import CourseContent from '../components/courses/courseDetails/MainCourseContent';
 import CourseReviews from '../components/courses/courseDetails/CourseReviews';
@@ -7,7 +7,12 @@ import CourseInstructors from '../components/courses/courseDetails/CourseInstruc
 import CourseTabs from '../components/courses/courseDetails/CourseTabs';
 
 function CourseDetail() {
+    const navigate = useNavigate();
     const tabs = ["What you'll learn", 'Course content', 'Reviews', 'Instructors'];
+
+    const handleEnrollNow = () => {
+        navigate('/enrolled-course');
+    };
 
     return (
         <div className="container mx-auto py-10 px-4">
@@ -32,7 +37,9 @@ function CourseDetail() {
                         <span className="text-gray-600">(5,000 ratings)</span>
                     </div>
                     <p className="text-xl font-bold my-4">Free</p>
-                    <button className="bg-[#44318D] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#2b246a] transition duration-300">
+                    <button
+                        onClick={handleEnrollNow}
+                        className="bg-[#44318D] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#2b246a] transition duration-300">
                         Enroll now
                     </button>
                 </div>

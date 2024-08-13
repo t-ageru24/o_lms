@@ -8,7 +8,8 @@ import Contact from './pages/Contact';
 import CourseDetail from './pages/CourseDetail';
 import Login from './pages/authenth/Login';
 import SignUp from './pages/authenth/SignUp';
-import CourseList from './pages/CourseList';
+import CourseCardList from './components/courses/CourseCardList';
+import EnrolledCourse from './pages//EnrolledCourse';
 
 function App() {
   return (
@@ -23,7 +24,8 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
-            <Route path="/courses" element={<CourseList />} />
+            <Route path="/courses" element={<CourseCardList />} />
+            <Route path="/enrolled-course" element={<EnrolledCourse />} />
           </Routes>
         </div>
         <Footer />
