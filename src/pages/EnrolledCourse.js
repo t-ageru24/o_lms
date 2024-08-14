@@ -5,28 +5,30 @@ import CourseTabs from '../components/enrolledCourse/CourseTabs';
 import MenuBar from '../components/enrolledCourse/MenuBar';
 
 const EnrolledCourse = () => {
-    const [isSidebarOpen, setIsSidebarOpen] = useState(false); // Start with sidebar closed on smaller screens
+    const [isSidebarOpen, setIsSidebarOpen] = useState(true); // Initialize as true to make it visible by default
 
     const toggleSidebar = () => {
         setIsSidebarOpen(!isSidebarOpen);
     };
 
     return (
-        <div className="relative flex pt-1.5">
-            {/* Sidebar */}
-            <CourseSidebar isOpen={isSidebarOpen} />
-
+        <div className="flex flex-col min-h-screen">
             {/* MenuBar */}
-            <MenuBar onClick={toggleSidebar} />
+            <MenuBar onClick={toggleSidebar} isSidebarOpen={isSidebarOpen} />
 
-            {/* Content Area */}
-            <div className={`flex-1 ${isSidebarOpen ? 'ml-64' : 'ml-0'} transition-all duration-300 md:ml-64`}>
-                {/* Adjust margin-left based on sidebar state, full width on small screens */}
-                <CourseTabs>
-                    <CourseContentArea />
-                    {/* Add more tabs here as needed */}
-                </CourseTabs>
+            <div className="flex flex-1">
+                {/* Sidebar */}
+                <CourseSidebar isOpen={isSidebarOpen} onClick={toggleSidebar} />
+                <div className='flex ml-8'></div>
+                <div className={`flex-1 transition-all duration-300 ${isSidebarOpen ? 'ml-64' : 'ml-0'}`}>
+                    <CourseTabs>
+                        {/* Add more tabs here as needed */}
+                        <CourseContentArea />
+                    </CourseTabs>
+                </div>
             </div>
+
+            {/* Footer */}
         </div>
     );
 };
