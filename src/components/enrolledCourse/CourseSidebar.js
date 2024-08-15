@@ -5,8 +5,8 @@ const chapters = [
     {
         title: 'Chapter 1: Introduction',
         lessons: [
-            { title: 'Lesson 1.1: Getting Started', progress: 70, completed: true },
-            { title: 'Lesson 1.2: Basics', progress: 40, completed: false },
+            { title: 'Lesson 1.1: Getting Started', progress: 100, completed: true },
+            { title: 'Lesson 1.2: Basics', progress: 100, completed: true },
         ],
     },
     {

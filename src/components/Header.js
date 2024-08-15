@@ -71,9 +71,6 @@ function Header() {
               <option value="articles">Articles</option>
               <option value="tutorials">Tutorials</option>
             </select>
-            <button type="submit" className={buttonClass}>
-              Filter
-            </button>
           </form>
 
           <nav className="hidden md:flex items-center space-x-4">
@@ -152,9 +149,6 @@ function Header() {
               <option value="articles">Articles</option>
               <option value="tutorials">Tutorials</option>
             </select>
-            <button type="submit" className={buttonClass}>
-              Filter
-            </button>
           </form>
           <nav className="flex flex-col space-y-4">
             <Link to="/" className={getLinkClass('/')}>
