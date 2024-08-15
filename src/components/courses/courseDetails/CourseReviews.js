@@ -1,16 +1,22 @@
 import React, { useState } from 'react';
+import { FaStar } from 'react-icons/fa';
 
 function CourseReviews() {
   const [reviews, setReviews] = useState([
     { name: 'Esmael M.', rating: 5, comment: 'Great course! Highly recommend.' },
-    { name: 'Meba ', rating: 4, comment: 'Very informative and well structured.' },
+    { name: 'Meba', rating: 4, comment: 'Very informative and well structured.' },
   ]);
 
   const [newReview, setNewReview] = useState({ name: '', rating: 0, comment: '' });
+  const [hoverRating, setHoverRating] = useState(0);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setNewReview({ ...newReview, [name]: value });
+  };
+
+  const handleRatingClick = (rating) => {
+    setNewReview({ ...newReview, rating });
   };
 
   const handleSubmit = (e) => {
@@ -18,6 +24,7 @@ function CourseReviews() {
     if (newReview.name && newReview.rating && newReview.comment) {
       setReviews([...reviews, newReview]);
       setNewReview({ name: '', rating: 0, comment: '' });
+      setHoverRating(0);
     }
   };
 
@@ -29,7 +36,16 @@ function CourseReviews() {
         {reviews.map((review, index) => (
           <div key={index} className="bg-white p-6 shadow-md rounded-md">
             <h3 className="text-xl font-semibold mb-2">{review.name}</h3>
-            <p className="text-yellow-500 mb-2">{'★'.repeat(review.rating)}</p>
+            <div className="flex items-center mb-2">
+              {Array(5)
+                .fill(0)
+                .map((_, i) => (
+                  <FaStar
+                    key={i}
+                    className={`text-yellow-500 ${i < review.rating ? 'text-yellow-500' : 'text-gray-300'}`}
+                  />
+                ))}
+            </div>
             <p className="text-gray-600">{review.comment}</p>
           </div>
         ))}
@@ -48,20 +64,19 @@ function CourseReviews() {
           required
         />
 
-        <select 
-          name="rating" 
-          value={newReview.rating} 
-          onChange={handleInputChange} 
-          className="w-full mb-4 p-4 border rounded-md" 
-          required
-        >
-          <option value="0">Select Rating</option>
-          <option value="1">1 - Poor</option>
-          <option value="2">2 - Fair</option>
-          <option value="3">3 - Good</option>
-          <option value="4">4 - Very Good</option>
-          <option value="5">5 - Excellent</option>
-        </select>
+        <div className="flex items-center mb-4">
+          {Array(5)
+            .fill(0)
+            .map((_, i) => (
+              <FaStar
+                key={i}
+                className={`cursor-pointer text-3xl ${i < (hoverRating || newReview.rating) ? 'text-yellow-500' : 'text-gray-300'}`}
+                onClick={() => handleRatingClick(i + 1)}
+                onMouseEnter={() => setHoverRating(i + 1)}
+                onMouseLeave={() => setHoverRating(0)}
+              />
+            ))}
+        </div>
 
         <textarea 
           name="comment" 
@@ -84,27 +99,3 @@ function CourseReviews() {
 }
 
 export default CourseReviews;
-
-
-// // src/components/courses/CourseReviews.js
-// import React from 'react';
-
-// function CourseReviews() {
-//     return (
-//         <section>
-//             <h2 className="text-xl font-bold mb-4">Reviews</h2>
-//             <div className="space-y-4">
-//                 <div className="border p-4 rounded-lg">
-//                     <p>"This course was amazing! I learned so much."</p>
-//                     <p className="text-sm text-gray-600">- John Doe</p>
-//                 </div>
-//                 <div className="border p-4 rounded-lg">
-//                     <p>"A great introduction to web development."</p>
-//                     <p className="text-sm text-gray-600">- Jane Smith</p>
-//                 </div>
-//             </div>
-//         </section>
-//     );
-// }
-
-// export default CourseReviews;
