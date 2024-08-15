@@ -21,9 +21,10 @@ function CourseDetail() {
 
   return (
     <div className="container mx-auto py-10 px-4">
-      <div className="flex flex-col md:flex-row md:space-x-10">
-        <div className="md:w-1/3">
-          <div className="relative w-full h-full ">
+      <div className="flex flex-col md:flex-row md:space-x-10 space-y-6 md:space-y-0">
+        {/* Video section */}
+        <div className="w-full md:w-1/3">
+          <div className="relative w-full h-0" style={{ paddingBottom: '56.25%' }}>
             <iframe 
               src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
               title="Course Preview" 
@@ -32,19 +33,21 @@ function CourseDetail() {
             </iframe>
           </div>
         </div>
+
+        {/* Course details section */}
         <div className="md:w-2/3">
-          <h1 className="text-4xl font-bold mb-4">Build a Quiz App with HTML, CSS, and JavaScript</h1>
-          <p className="text-xl text-gray-700 mb-6">
+          <h1 className="text-3xl md:text-4xl font-bold mb-4">Build a Quiz App with HTML, CSS, and JavaScript</h1>
+          <p className="text-lg md:text-xl text-gray-700 mb-4 md:mb-6">
             Improve your core development skills by building a Quiz App with HTML, CSS, and JavaScript.
           </p>
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-4 mb-4">
             <span className="bg-yellow-400 text-gray-800 px-2 py-1 rounded-full">5 ★</span>
             <span className="text-gray-600">(5,000 ratings)</span>
           </div>
-          <p className="text-xl font-bold my-4">Free</p>
+          <p className="text-lg md:text-xl font-bold my-4">Free</p>
           <button
             onClick={handleEnrollNow}
-            className="bg-[#44318D] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#2b246a] transition duration-300">
+            className="bg-[#44318D] text-white px-4 py-2 md:px-6 md:py-3 rounded-lg font-semibold hover:bg-[#2b246a] transition duration-300">
             Enroll now
           </button>
         </div>

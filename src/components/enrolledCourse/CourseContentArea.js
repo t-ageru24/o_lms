@@ -4,7 +4,7 @@ const CourseContentArea = () => {
     return (
         <div className="flex flex-col md:flex-row w-full p-4 md:p-8 space-y-4 md:space-y-0 md:space-x-8">
             {/* Main content area */}
-            <div className="flex-1 md:mr-4">
+            <div className="flex-1">
                 <h1 className="text-2xl md:text-3xl font-bold mb-4">
                     Build a Quiz App with HTML, CSS, and JavaScript
                 </h1>
@@ -13,7 +13,7 @@ const CourseContentArea = () => {
                     <span className="text-gray-500 cursor-pointer">Downloads</span>
                 </div>
                 <div className="flex justify-center mb-8">
-                    <div className="relative w-full" style={{ paddingTop: '56.25%' /* 16:9 Aspect Ratio */ }}>
+                    <div className="relative w-full md:w-auto" style={{ paddingTop: '56.25%' /* 16:9 Aspect Ratio */ }}>
                         <iframe
                             className="absolute top-0 left-0 w-full h-full"
                             src="https://www.youtube.com/embed/dQw4w9WgXcQ"

@@ -26,6 +26,10 @@ function Header() {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
   const getLinkClass = (path) => {
     return location.pathname === path
       ? 'text-[#44318D] font-bold' // Keep active link color white
@@ -76,17 +80,17 @@ function Header() {
           <nav className="hidden md:flex items-center space-x-4">
             <ul className="flex space-x-4">
               <li>
-                <Link to="/" className={getLinkClass('/')}>
+                <Link to="/" className={getLinkClass('/')} onClick={closeMobileMenu}>
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/about" className={getLinkClass('/about')}>
+                <Link to="/about" className={getLinkClass('/about')} onClick={closeMobileMenu}>
                   About Us
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className={getLinkClass('/contact')}>
+                <Link to="/contact" className={getLinkClass('/contact')} onClick={closeMobileMenu}>
                   Contact
                 </Link>
               </li>
@@ -94,19 +98,22 @@ function Header() {
                 <li>
                   <FaUserCircle 
                     className="text-2xl cursor-pointer hover:text-gray-300"
-                    onClick={() => navigate('/profile')}
+                    onClick={() => {
+                      navigate('/profile');
+                      closeMobileMenu();
+                    }}
                   />
                 </li>
               ) : (
                 <>
                   <li>
-                    <Link to="/login" className={getLinkClass('/login')}>
+                    <Link to="/login" className={getLinkClass('/login')} onClick={closeMobileMenu}>
                       Login
                     </Link>
                   </li>
                   <li>
-                    <Link to="/signup" className={getLinkClass('/signup')}>
-                        Sign Up
+                    <Link to="/signup" className={getLinkClass('/signup')} onClick={closeMobileMenu}>
+                      Sign Up
                     </Link>
                   </li>
                 </>
@@ -151,26 +158,29 @@ function Header() {
             </select>
           </form>
           <nav className="flex flex-col space-y-4">
-            <Link to="/" className={getLinkClass('/')}>
+            <Link to="/" className={getLinkClass('/')} onClick={closeMobileMenu}>
               Home
             </Link>
-            <Link to="/about" className={getLinkClass('/about')}>
+            <Link to="/about" className={getLinkClass('/about')} onClick={closeMobileMenu}>
               About Us
             </Link>
-            <Link to="/contact" className={getLinkClass('/contact')}>
+            <Link to="/contact" className={getLinkClass('/contact')} onClick={closeMobileMenu}>
               Contact
             </Link>
             {isAuthenticated ? (
               <FaUserCircle 
                 className="text-2xl cursor-pointer hover:text-gray-300"
-                onClick={() => navigate('/profile')}
+                onClick={() => {
+                  navigate('/profile');
+                  closeMobileMenu();
+                }}
               />
             ) : (
               <>
-                <Link to="/login" className={getLinkClass('/login')}>
+                <Link to="/login" className={getLinkClass('/login')} onClick={closeMobileMenu}>
                   Login
                 </Link>
-                <Link to="/signup" className={getLinkClass('/signup')}>
+                <Link to="/signup" className={getLinkClass('/signup')} onClick={closeMobileMenu}>
                     Sign Up
                 </Link>
               </>

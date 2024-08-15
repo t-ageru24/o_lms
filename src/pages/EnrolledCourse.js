@@ -16,19 +16,25 @@ const EnrolledCourse = () => {
             {/* MenuBar */}
             <MenuBar onClick={toggleSidebar} isSidebarOpen={isSidebarOpen} />
 
-            <div className="flex flex-1">
+            <div className="relative flex flex-1">
                 {/* Sidebar */}
-                <CourseSidebar isOpen={isSidebarOpen} onClick={toggleSidebar} />
-                <div className='flex ml-8'></div>
-                <div className={`flex-1 transition-all duration-300 ${isSidebarOpen ? 'ml-64' : 'ml-0'}`}>
+                <CourseSidebar
+                    isOpen={isSidebarOpen}
+                    onClick={toggleSidebar}
+                    className={`transition-all duration-300 ${isSidebarOpen ? 'block' : 'hidden'} z-10`} // Ensure z-index stacking
+                />
+
+                <div
+                    className={`flex-1 transition-all duration-300 ${
+                        isSidebarOpen ? 'ml-64' : 'ml-0'
+                    }`}
+                >
                     <CourseTabs>
                         {/* Add more tabs here as needed */}
                         <CourseContentArea />
                     </CourseTabs>
                 </div>
             </div>
-
-            {/* Footer */}
         </div>
     );
 };

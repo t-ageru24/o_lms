@@ -61,8 +61,8 @@ const CourseSidebar = ({ isOpen, onClick }) => {
     return (
         <div
             className={`fixed top-16 left-0 h-[calc(100vh-4rem)] bg-gray-800 text-white transition-transform duration-300 ${
-                isOpen ? 'w-64' : 'w-0'
-            } overflow-hidden`}
+                isOpen ? 'w-64 md:w-72' : 'w-0'
+            } overflow-hidden md:overflow-visible`}
         >
             <div className="flex flex-col h-full mt-8">
                 <div className="flex flex-col items-start p-4 mb-4">
