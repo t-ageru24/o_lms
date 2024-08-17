@@ -32,7 +32,7 @@ function Header() {
 
   const getLinkClass = (path) => {
     return location.pathname === path
-      ? 'text-[#44318D] font-bold' // Keep active link color white
+      ? 'text-[#44318D] font-bold' // Keep active link color purple
       : 'text-white hover:text-[#44318D] transition duration-300';
   };
 
@@ -54,7 +54,7 @@ function Header() {
               placeholder="Search..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="p-2 rounded-md text-gray-700 pr-10" // Add padding-right for space for the icon
+              className="p-2 rounded-md text-gray-700 pr-10"
             />
             <FaSearch 
               className="absolute right-3 top-2.5 text-gray-500 cursor-pointer" 
@@ -92,6 +92,11 @@ function Header() {
               <li>
                 <Link to="/contact" className={getLinkClass('/contact')} onClick={closeMobileMenu}>
                   Contact
+                </Link>
+              </li>
+              <li>
+                <Link to="/become-instructor" className={getLinkClass('/become-instructor')} onClick={closeMobileMenu}>
+                  Become Instructor
                 </Link>
               </li>
               {isAuthenticated ? (
@@ -166,6 +171,9 @@ function Header() {
             </Link>
             <Link to="/contact" className={getLinkClass('/contact')} onClick={closeMobileMenu}>
               Contact
+            </Link>
+            <Link to="/become-instructor" className={getLinkClass('/become-instructor')} onClick={closeMobileMenu}>
+              Become Instructor
             </Link>
             {isAuthenticated ? (
               <FaUserCircle 

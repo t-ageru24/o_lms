@@ -13,7 +13,7 @@ import EnrolledCourse from './pages/EnrolledCourse';
 import UserProfile from './pages/UserProfile';
 import ForgotPassword from './pages/authenth/ForgotPassword';
 import PasswordResetConfirmation from './pages/authenth/PasswordResetConfirmation';
-
+import InstructorRegistrationPage from './pages/Instructor/InstructorRegistrationPage';
 
 function App() {
   return (
@@ -26,6 +26,7 @@ function App() {
             <Route path="/course/:id" element={<CourseDetail />} />
             <Route path="/about" element={<AboutUs />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/become-instructor" element={<InstructorRegistrationPage />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/courses" element={<CourseCardList />} />
