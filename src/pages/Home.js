@@ -2,9 +2,9 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import PartnerUniversities from '../components/PartnerUniversities';
-import HeroSection from '../components/HeroSection';
-import LMSFeatures from '../components/LMSFeatures';
+import PartnerUniversities from '../components/home/PartnerUniversities';
+import HeroSection from '../components/home/HeroSection';
+import LMSFeatures from '../components/home/LMSFeatures';
 import CourseCardList from '../components/courses/CourseCardList';
 
 function Home() {
