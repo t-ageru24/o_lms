@@ -1,6 +1,9 @@
-import React from 'react';
+import React from 'react'; // Removed useState
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Header from './components/home/Header';
+import GuestHeader from './components/Header/GuestHeader';
+import StudentHeader from './components/Header/StudentHeader';
+import InstructorHeader from './components/Header/InstructorHeader';
+import AdminHeader from './components/Header/AdminHeader';
 import Footer from './components/home/Footer';
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
@@ -14,12 +17,30 @@ import UserProfile from './pages/UserProfile';
 import ForgotPassword from './pages/authenth/ForgotPassword';
 import PasswordResetConfirmation from './pages/authenth/PasswordResetConfirmation';
 import InstructorRegistrationPage from './pages/Instructor/InstructorRegistrationPage';
+import LoginForm from './components/instractor/LoginForm';
+import InstructorProfile from './pages/Instructor/InstructorProfile';
 
 function App() {
+  // Replace this with actual logic to get the user role
+  const userRole = 'Guest'; 
+
+  const renderHeader = () => {
+    switch (userRole) {
+      case 'Student':
+        return <StudentHeader />;
+      case 'Instructor':
+        return <InstructorHeader />;
+      case 'Admin':
+        return <AdminHeader />;
+      default:
+        return <GuestHeader />;
+    }
+  };
+
   return (
     <Router>
       <div className="flex flex-col min-h-screen bg-gray-50">
-        <Header />
+        {renderHeader()}
         <div className="flex-grow mt-16">
           <Routes>
             <Route path="/" element={<Home />} />
@@ -34,6 +55,8 @@ function App() {
             <Route path="/profile" element={<UserProfile />} />
             <Route path="/forgot-password" element={<ForgotPassword />} />
             <Route path="/password-reset-confirmation" element={<PasswordResetConfirmation />} />
+            <Route path="/" element={<LoginForm />} />
+            <Route path="/instructor-profile" element={<InstructorProfile />} />
           </Routes>
         </div>
         <Footer />

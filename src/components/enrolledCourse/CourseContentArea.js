@@ -13,7 +13,7 @@ const CourseContentArea = () => {
                     <span className="text-gray-500 cursor-pointer">Downloads</span>
                 </div>
                 <div className="flex justify-center mb-8">
-                    <div className="relative w-full md:w-auto" style={{ paddingTop: '56.25%' /* 16:9 Aspect Ratio */ }}>
+                    <div className="relative w-full max-w-full h-0 pb-[56.25%]"> 
                         <iframe
                             className="absolute top-0 left-0 w-full h-full"
                             src="https://www.youtube.com/embed/dQw4w9WgXcQ"
