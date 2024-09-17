@@ -2,7 +2,7 @@
 import axios from 'axios';
 import api_url from './../api';
 
-const API_ENDPOINT = `${api_url}/signup`; // Replace with your actual API URL
+const API_ENDPOINT = `${api_url}/auth/register`; // Replace with your actual API URL
 
 const signUpService = async ({ email, password, name, phone, role }) => {
     console.log(email,
