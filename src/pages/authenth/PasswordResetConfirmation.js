@@ -14,7 +14,7 @@ function PasswordResetConfirmation() {
         onClick={() => navigate('/login')} 
         className="bg-[#44318D] text-white px-4 py-2 rounded-lg font-semibold hover:bg-[#2b246a] transition duration-300"
       >
-        Back to Login
+        Please check Your Email!
       </button>
     </div>
   );

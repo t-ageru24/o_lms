@@ -23,6 +23,8 @@ import InstructorProfile from './pages/Instructor/InstructorProfile';
 function App() {
   // Replace this with actual logic to get the user role
   const userRole = 'Guest'; 
+  // const userRole = localStorage.getItem('role'); 
+
 
   const renderHeader = () => {
     switch (userRole) {

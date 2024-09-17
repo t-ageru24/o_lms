@@ -1,7 +1,6 @@
-
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import authService from './../../services/auth/loginServices.js'; // Import the auth service
+import authService from '../../services/auth/loginServices.js'; // Import the auth service
 
 function Login() {
   const [emailOrPhone, setEmailOrPhone] = useState('');
@@ -9,17 +8,40 @@ function Login() {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
+  // Function to detect if the input is an email or phone number
+  const isPhoneNumber = (input) => {
+    const phoneRegex = /^\+?[1-9]\d{1,14}$/; // Supports international phone numbers
+    return phoneRegex.test(input);
+  };
+
+  const isEmail = (input) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Basic email validation
+    return emailRegex.test(input);
+  };
+
   const handleSubmit = async (e) => {
+    localStorage.setItem('role', '');
     e.preventDefault();
-    const payload = {
-      phone: emailOrPhone, // Assuming emailOrPhone is for phone number; change accordingly
+
+    let payload = {
       password: password,
     };
 
+    // Dynamically adjust the payload based on whether the input is a phone number or an email
+    if (isPhoneNumber(emailOrPhone)) {
+      payload.phone = emailOrPhone;
+    } else if (isEmail(emailOrPhone)) {
+      payload.email = emailOrPhone;
+    } else {
+      setError("Please enter a valid email or phone number.");
+      return;
+    }
+
     try {
       const response = await authService.login(payload);
-      // Save token to localStorage or cookies
+      // Save token and role to localStorage
       localStorage.setItem('token', response.token);
+      localStorage.setItem('role', response.user.role);
       navigate('/profile'); // Navigate to the profile page on successful login
     } catch (err) {
       setError(err.message);

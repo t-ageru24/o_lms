@@ -13,7 +13,7 @@ function InstructorProfile() {
             className="w-32 h-32 md:w-48 md:h-48 rounded-full shadow-md"
           />
           <div className="text-center md:text-left">
-            <h1 className="text-3xl font-bold text-[#44318D]">John Doe</h1>
+            <h1 className="text-3xl font-bold text-[#44318D]">Kebede Abebe</h1>
             <p className="text-gray-500 mt-2">
               Senior Software Engineer & Instructor
             </p>
@@ -34,7 +34,7 @@ function InstructorProfile() {
           <div className="flex flex-col md:flex-row md:space-x-8 mt-4 space-y-4 md:space-y-0">
             <div className="flex items-center space-x-2">
               <FaEnvelope className="text-gray-500" />
-              <span className="text-gray-700">johndoe@example.com</span>
+              <span className="text-gray-700">kebedeabebe@example.com</span>
             </div>
             <div className="flex items-center space-x-2">
               <FaPhone className="text-gray-500" />
@@ -47,7 +47,7 @@ function InstructorProfile() {
         <div className="mt-8">
           <h2 className="text-xl font-semibold text-[#44318D]">Biography</h2>
           <p className="text-gray-700 mt-4">
-            John Doe is a seasoned software engineer with over 10 years of experience in the industry. He has worked with several top tech companies and has a passion for teaching others. John specializes in full-stack development and has a deep understanding of both front-end and back-end technologies.
+            Kebede Abebe is a seasoned software engineer with over 10 years of experience in the industry. He has worked with several top tech companies and has a passion for teaching others. John specializes in full-stack development and has a deep understanding of both front-end and back-end technologies.
           </p>
         </div>
 
