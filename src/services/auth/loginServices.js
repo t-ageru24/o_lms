@@ -1,7 +1,7 @@
 import axios from 'axios';
 import api_url from './../api';
 
-const API_URL = `${api_url}/auth/login/email`; // Replace with your actual API URL
+const API_URL = `${api_url}/auth/login/email`; 
 
 const login = async (payload) => {
   try {
