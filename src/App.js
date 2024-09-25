@@ -12,8 +12,8 @@ import CourseDetail from './pages/CourseDetail';
 import Login from './pages/authenth/Login';
 import SignUp from './pages/authenth/SignUp';
 import CourseCardList from './components/courses/CourseCardList';
-import EnrolledCourse from './pages/learners/EnrolledCourse';
-import UserProfile from './pages/learners/UserProfile';
+import EnrolledCourse from './pages/courses/enrolledCourse/EnrolledCourse';
+import UserProfile from './pages/userProfile/UserProfileBody';
 import ForgotPassword from './pages/authenth/ForgotPassword';
 import PasswordResetConfirmation from './pages/authenth/PasswordResetConfirmation';
 import InstructorRegistrationPage from './pages/Instructor/InstructorRegistrationPage';
@@ -22,7 +22,7 @@ import InstructorProfile from './pages/Instructor/InstructorProfile';
 
 function App() {
   // Replace this with actual logic to get the user role
-  const userRole = 'Guest'; 
+  const userRole = 'Student'; 
   // const userRole = localStorage.getItem('role'); 
 
 

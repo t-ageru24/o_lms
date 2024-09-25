@@ -8,12 +8,15 @@ const CourseContentArea = () => {
                 <h1 className="text-2xl md:text-3xl font-bold mb-4">
                     Build a Quiz App with HTML, CSS, and JavaScript
                 </h1>
+                
                 <div className="flex flex-col md:flex-row md:space-x-4 space-y-2 md:space-y-0 mb-8">
                     <span className="font-semibold text-[#44318D] cursor-pointer">Lesson</span>
                     <span className="text-gray-500 cursor-pointer">Downloads</span>
                 </div>
+                
+                {/* Video Frame */}
                 <div className="flex justify-center mb-8">
-                    <div className="relative w-full max-w-full h-0 pb-[56.25%]"> 
+                    <div className="relative w-full max-w-full h-0 pb-[56.25%] border-4 border-gray-300 rounded-lg overflow-hidden shadow-lg"> 
                         <iframe
                             className="absolute top-0 left-0 w-full h-full"
                             src="https://www.youtube.com/embed/dQw4w9WgXcQ"
@@ -24,6 +27,8 @@ const CourseContentArea = () => {
                         ></iframe>
                     </div>
                 </div>
+
+                {/* Navigation Buttons */}
                 <div className="flex flex-col md:flex-row justify-between space-y-2 md:space-y-0 md:space-x-4">
                     <button className="bg-[#44318D] text-white py-2 px-4 rounded-lg hover:bg-[#2b246a] w-full md:w-auto">
                         Previous

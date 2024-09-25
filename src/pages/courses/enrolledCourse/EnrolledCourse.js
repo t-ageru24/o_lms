@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import CourseSidebar from '../../components/enrolledCourse/CourseSidebar';
-import CourseContentArea from '../../components/enrolledCourse/CourseContentArea';
-import CourseTabs from '../../components/enrolledCourse/CourseTabs';
-import MenuBar from '../../components/enrolledCourse/MenuBar';
+import CourseSidebar from '../../../components/enrolledCourse/CourseSidebar';
+import CourseContentArea from '../../../components/enrolledCourse/CourseContentArea';
+import CourseTabs from '../../../components/enrolledCourse/CourseTabs';
+import MenuBar from '../../../components/enrolledCourse/MenuBar';
 
 const EnrolledCourse = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(true); // Initialize as true to make it visible by default
